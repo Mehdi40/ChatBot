@@ -1,0 +1,20 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "predeploy": "./node_modules/.bin/babel /flow-functions --out-dir /functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.0.3",
+    "flow-remove-types": "^1.2.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "private": true
+}

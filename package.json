@@ -1,0 +1,59 @@
+{
+  "name": "chatbot",
+  "version": "0.0.1",
+  "description": "A simple chatbot",
+  "main": "index.js",
+  "scripts": {
+    "flow": "flow",
+    "lint": "eslint .",
+    "predeploy": "./node_modules/.bin/babel --plugins @babel/plugin-transform-flow-strip-types --ignore flow-functions/node_modules flow-functions --out-dir functions --copy-files flow-functions/*.json",
+    "deploy": "firebase deploy --only functions",
+    "precheck": "npm run lint",
+    "check": "npm run flow",
+    "test": "nyc mocha --compilers js:babel-core/register --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mehdi40/ChatBot.git"
+  },
+  "keywords": [
+    "chatbot"
+  ],
+  "author": "Mehdi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mehdi40/ChatBot/issues"
+  },
+  "homepage": "https://github.com/Mehdi40/ChatBot#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "firebase-functions-test": "^0.1.4",
+    "flow-bin": "^0.82.0",
+    "nyc": "^13.0.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "express": "^4.16.3",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.5",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.1",
+    "sinon": "^6.3.5",
+    "spotify-web-api-node": "^4.0.0",
+    "supertest": "^3.3.0"
+  }
+}
